@@ -56,7 +56,9 @@ export function DripsyProvider({ options, ...props }: Props) {
   return (
     <ResponsiveContextProvider>
       <DripsyContext.Provider value={{ ssr: !!options?.ssr }}>
-        <ThemeUIProvider {...props} />
+        <ThemeUIProvider {...props}>
+          {children}
+        </ThemeUIProvider>
       </DripsyContext.Provider>
     </ResponsiveContextProvider>
   )
